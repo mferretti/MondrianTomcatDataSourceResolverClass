@@ -1,0 +1,10 @@
+this is an implementation of mondrian.spi.DataSourceResolver that complies to the 
+apache tomcat's instruction on getting hold of a jndi connection (https://tomcat.apache.org/tomcat-6.0-doc/jndi-datasource-examples-howto.html#Database_Connection_Pool_(DBCP)_Configurations)
+
+It relies on mondrian.jar >= 3.3 available at sourceforge ( http://sourceforge.net/projects/mondrian/files/mondrian/mondrian-3.3.0.14703/mondrian-3.3.0.14703.zip/download )
+
+Once compiled into a class or jar, you need to add/modify your mondrian.properties with the following : 
+
+mondrian.spi.dataSourceResolverClass=com.fermasoft.mondrian.spi.impl.TomcatDataSourceResolver
+
+and your mondrian based application will be able to use jndi connections deployed into tomcat. 
